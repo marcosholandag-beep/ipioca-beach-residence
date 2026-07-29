@@ -370,6 +370,14 @@ em.poetic-light {
   box-shadow: var(--sombra-forte);
   aspect-ratio: 16/9;
   background: url('assets/fotos/bg-home.jpg') center/cover no-repeat;
+  position: relative;
+}
+.chapter-media iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .chapter-caption {
   max-width: 820px;
@@ -799,10 +807,10 @@ em.poetic-light {
 }
 .compare-list li b {
   color: var(--preto);
-  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
-  font-size: 17px;
-  letter-spacing: 0.01em;
+  font-size: inherit;
+  letter-spacing: 0;
+  font-family: inherit;
 }
 .compare-col.positive .compare-list li b { color: #FFF; }
 .compare-note {
@@ -1262,7 +1270,9 @@ footer {
       A 30 minutos do aeroporto, Ipioca é o pedaço do litoral norte de Alagoas que <em class="poetic-dark">ainda amanhece devagar</em>. Coqueiral denso, mar em tons de turquesa, piscinas naturais que aparecem na maré baixa. É aqui que a sua casa de férias espera, longe da agitação do centro de Maceió.
     </p>
   </div>
-  <div class="chapter-media" style="background-image: url('assets/fotos/ipioca-praia-turquesa.jpg');"></div>
+  <div class="chapter-media">
+    <iframe src="https://www.youtube.com/embed/uTfoBSTAIUY" title="Ipioca Beach Residence" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
   <p class="chapter-caption">Praia de Ipioca · Litoral Norte de Alagoas · 30 min do Aeroporto Zumbi dos Palmares</p>
 </section>
 
@@ -1377,17 +1387,17 @@ footer {
   <div class="section-inner">
     <p class="section-eyebrow">Faz as contas</p>
     <h2 class="section-title">Quanto você já gasta<br>em férias <span class="poetic">sem ficar</span><br>com nada?</h2>
-    <p class="section-lead" style="color: rgba(255,255,255,0.75);">Todo verão sai dinheiro. Todo verão você volta pra casa sem levar nada que fique. Compare os dois caminhos pra o mesmo bolso.</p>
+    <p class="section-lead" style="color: rgba(255,255,255,0.75);">Uma família brasileira gasta entre <b style="color:#FFF;">R$ 12 mil e R$ 15 mil por ano</b> com hospedagem em férias. E esse número sobe todo ano com a inflação do turismo. Compare o dinheiro que vai pra o hotel com o que vira patrimônio no seu nome.</p>
 
     <div class="compare">
       <div class="compare-col negative">
         <p class="compare-tag">Do jeito de sempre</p>
         <h3 class="compare-h">Hotel novo, todo ano</h3>
         <ul class="compare-list">
-          <li>Reserva um resort na alta temporada. <b>Se conseguir vaga.</b></li>
+          <li>Reserva um resort na alta temporada. Se conseguir vaga.</li>
           <li>Paga o preço que o mercado cobrar no dia.</li>
-          <li>Arruma a mala, vai, curte, volta.</li>
-          <li>Ano que vem, <b>começa tudo de novo do zero.</b></li>
+          <li>Em 10 anos, mais de <b>R$ 150 mil</b> gastos com hospedagem.</li>
+          <li>No fim: <b>nenhum patrimônio</b>. Ano que vem, começa tudo de novo.</li>
         </ul>
       </div>
       <div class="compare-col positive">
@@ -1396,13 +1406,13 @@ footer {
         <ul class="compare-list">
           <li>Cota <b>registrada em cartório</b> no seu nome.</li>
           <li>Parcelas fixas a partir de <b>66x R$ 620</b>.</li>
-          <li>Suas semanas garantidas <b>todo ano</b>, no mesmo apartamento mobiliado.</li>
+          <li>Semanas garantidas todo ano, no mesmo apartamento mobiliado.</li>
           <li>Se cansar de Maceió, troca por <b>qualquer resort da rede RCI</b>.</li>
         </ul>
       </div>
     </div>
 
-    <p class="compare-note" style="color: #FFF;">O dinheiro sai do mesmo bolso.<br>Muda pra onde ele vai.</p>
+    <p class="compare-note" style="color: #FFF;">O dinheiro é praticamente o mesmo.<br>O que muda é o patrimônio e as experiências que construiu.</p>
 
     <div class="compare-cta">
       <a href="#form" class="btn btn-primary">Quero simular a minha cota</a>
@@ -1426,7 +1436,6 @@ footer {
       <div class="rci-card"><h4>América do Sul</h4><p>Argentina, Chile, Uruguai</p></div>
       <div class="rci-card"><h4>Ásia e Oceania</h4><p>Tailândia, Bali, Austrália</p></div>
     </div>
-    <p class="rci-note">Depósito de semana e troca sujeitos às regras da rede RCI. O consultor explica o funcionamento completo na primeira ligação.</p>
   </div>
 </section>
 
