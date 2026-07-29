@@ -767,7 +767,6 @@ em.poetic-light {
 }
 .section-dark .compare-tag { color: rgba(255,255,255,0.6); }
 .compare-col.positive .compare-tag { color: rgba(255,255,255,0.85); }
-.compare-col.positive .compare-list li::before { color: #FFF; opacity: 0.85; }
 .compare-col.positive .compare-list li b { color: #FFF; }
 .compare-tag {
   font-family: 'Barlow Condensed', sans-serif;
@@ -796,15 +795,23 @@ em.poetic-light {
   margin-top: 12px;
 }
 .compare-list li {
-  display: flex; gap: 12px; align-items: flex-start;
+  position: relative;
+  padding-left: 22px;
   font-size: 15px;
   color: var(--cinza-texto);
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.compare-col.positive .compare-list li { color: rgba(255,255,255,0.8); }
+.compare-col.positive .compare-list li { color: rgba(255,255,255,0.88); }
 .compare-list li::before {
-  content: "▸"; color: var(--laranja); font-weight: 800; flex-shrink: 0; font-size: 13px; line-height: 1.6;
+  content: "▸";
+  color: var(--laranja);
+  font-weight: 800;
+  font-size: 13px;
+  position: absolute;
+  left: 0;
+  top: 2px;
 }
+.compare-col.positive .compare-list li::before { color: #FFF; opacity: 0.9; }
 .compare-list li b {
   color: var(--preto);
   font-weight: 700;
