@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ipioca Beach Residence · Sua casa de férias no litoral norte de Maceió</title>
+<meta name="description" content="Multipropriedade à beira-mar em Ipioca, Maceió/AL. Apartamento mobiliado, no seu nome, com estrutura de resort completa e rede RCI. Vitalício e hereditário. A partir de 66x R$ 620 + entrada reduzida.">
+<meta property="og:title" content="Ipioca Beach Residence · Sua casa de férias no Caribe brasileiro">
+<meta property="og:description" content="Multipropriedade à beira-mar em Ipioca, Maceió/AL. Apartamento mobiliado, no seu nome, com rede RCI. Vitalício e hereditário.">
+<meta property="og:image" content="assets/fotos/hero-fachada.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/logos/logo-simbolo-laranja.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Open+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@1,400;1,500;0,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --laranja: #EA8036;
+  --laranja-hover: #D66B22;
+  --laranja-suave: #FDF3EA;
+  --cinza-bege-logo: #B8B0A0;
+  --cinza-texto: #666666;
+  --cinza-suave: #8A8478;
+  --bege: #F1F0EB;
+  --bege-claro: #F7F5EF;
+  --preto: #111111;
+  --preto-suave: #1F2321;
+  --preto-medio: #2A2E2C;
+  --azul-fundo: #0D5A6E;
+  --sombra-card: 0 10px 40px rgba(0,0,0,0.08);
+  --sombra-forte: 0 30px 80px rgba(0,0,0,0.15);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Open Sans', -apple-system, sans-serif;
+  background: var(--bege-claro);
+  color: var(--preto);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; border: none; }
+
+.poetic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--laranja);
+  letter-spacing: 0;
+}
+em.poetic-dark {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--preto);
+  font-size: 1.02em;
+}
+em.poetic-light {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #FFF;
+  font-size: 1.02em;
+}
+
+/* ============ BOTÕES ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 38px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all .25s ease;
+  border: none;
+  white-space: nowrap;
+}
+.btn::after { content: "→"; font-size: 20px; }
+.btn-primary {
+  background: var(--laranja);
+  color: #FFF;
+  box-shadow: 0 12px 40px rgba(234,128,54,0.32);
+}
+.btn-primary:hover {
+  background: var(--laranja-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 50px rgba(234,128,54,0.42);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--laranja);
+  border: 2px solid var(--laranja);
+  padding: 18px 36px;
+}
+.btn-secondary:hover { background: var(--laranja); color: #FFF; }
+.btn-white-outline {
+  background: transparent;
+  color: #FFF;
+  border: 2px solid #FFF;
+  padding: 18px 36px;
+}
+.btn-white-outline:hover { background: #FFF; color: var(--preto); }
+.btn-small { padding: 12px 22px; font-size: 12px; letter-spacing: 0.12em; }
+.btn-small::after { display: none; }
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--laranja);
+  color: #FFF;
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.tag-pill.small::before {
+  content: ""; width: 6px; height: 6px; background: #FFF; border-radius: 50%;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('assets/fotos/hero-fachada.jpg') center/cover no-repeat;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(13,90,110,.5) 0%, rgba(0,0,0,.10) 35%, rgba(0,0,0,.78) 100%);
+  z-index: 1;
+}
+.hero-nav {
+  position: relative; z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 56px;
+}
+.hero-nav-brand img { height: 68px; width: auto; }
+.hero-nav-links {
+  display: flex; gap: 40px;
+  list-style: none;
+}
+.hero-nav-links a {
+  color: #FFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 8px 4px;
+  opacity: 0.9;
+  transition: opacity .2s;
+}
+.hero-nav-links a:hover { opacity: 1; }
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 40px 80px 100px;
+  color: #FFF;
+  max-width: 1080px;
+  margin-top: auto;
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 22px;
+  display: flex; gap: 14px; align-items: center;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ""; height: 1px; background: rgba(255,255,255,0.4);
+}
+.hero-eyebrow::before { flex: 0 0 40px; }
+.hero-eyebrow::after { flex: 1; max-width: 200px; }
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(46px, 6.4vw, 92px);
+  line-height: 0.98;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.25);
+  letter-spacing: -0.005em;
+}
+.hero-title .poetic { color: var(--laranja); font-size: 0.86em; padding-right: 4px; }
+.hero-sub {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 620px;
+  margin-bottom: 44px;
+  opacity: 0.95;
+  line-height: 1.55;
+}
+.hero-actions {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-price {
+  color: #FFF;
+  padding-left: 28px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+}
+.hero-price small {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.75;
+}
+.hero-price strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  margin: 6px 0;
+  letter-spacing: -0.01em;
+}
+.hero-price span { font-size: 12px; opacity: 0.7; letter-spacing: 0.05em; }
+.selo-mobiliado {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  z-index: 3;
+  width: 118px;
+  height: 118px;
+  background: var(--laranja);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  transform: rotate(-8deg);
+  border: 3px solid #FFF;
+}
+.selo-mobiliado::before {
+  content: "🛋";
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* ============ FAIXA DE ATRIBUTOS ============ */
+.strip-wrap {
+  padding: 0 56px;
+  margin-top: -55px;
+  position: relative;
+  z-index: 4;
+}
+.strip {
+  background: var(--preto);
+  color: #FFF;
+  border-radius: 24px;
+  padding: 34px 44px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.28);
+}
+.strip-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  padding-right: 24px;
+}
+.strip-item:last-child { border-right: none; padding-right: 0; }
+.strip-item-icon { width: 42px; height: 42px; color: var(--laranja); flex-shrink: 0; }
+.strip-item-icon svg { width: 100%; height: 100%; }
+.strip-item-txt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+.strip-item-txt small {
+  display: block;
+  font-weight: 400;
+  text-transform: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.55);
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* ============ CHAPTER (padrão narrativo) ============ */
+.chapter {
+  padding: 150px 56px;
+}
+.chapter-narrow {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+.chapter-coords {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--cinza-suave);
+  margin-bottom: 26px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.chapter-coords span { display: inline-flex; align-items: center; gap: 14px; }
+.chapter-coords span:not(:last-child)::after { content: "·"; opacity: 0.5; }
+.chapter-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 6.5vw, 100px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--preto);
+  margin-bottom: 26px;
+  letter-spacing: -0.01em;
+}
+.chapter-title .poetic { font-size: 0.85em; }
+.chapter-lead {
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--cinza-texto);
+  max-width: 680px;
+  margin: 0 auto;
+}
+.chapter-media {
+  margin: 70px auto 0;
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-forte);
+  aspect-ratio: 16/9;
+  background: url('assets/fotos/bg-home.jpg') center/cover no-repeat;
+}
+.chapter-caption {
+  max-width: 820px;
+  margin: 34px auto 0;
+  font-size: 14px;
+  text-align: center;
+  color: var(--cinza-suave);
+  font-style: italic;
+}
+
+/* ============ SECTION DARK (empreendimento) ============ */
+.section-dark {
+  background: var(--preto-suave);
+  color: #FFF;
+  padding: 150px 56px;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--laranja);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(40px, 4.5vw, 68px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  max-width: 780px;
+}
+.section-title .poetic { font-size: 0.9em; }
+.section-lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  max-width: 620px;
+  margin-bottom: 70px;
+}
+.feature-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 100px;
+}
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.feature.reverse .feature-media { order: -1; }
+.feature-txt-block { display: flex; flex-direction: column; gap: 18px; }
+.feature-icon { width: 52px; height: 52px; color: var(--laranja); }
+.feature-icon svg { width: 100%; height: 100%; }
+.feature-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.feature-txt {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  max-width: 480px;
+}
+.feature-media {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.feature-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ============ COMO FUNCIONA (3 passos) ============ */
+.section-light {
+  background: var(--bege-claro);
+  padding: 150px 56px;
+}
+.section-light .section-title { color: var(--preto); }
+.section-light .section-lead { color: var(--cinza-texto); }
+.section-light .section-eyebrow { color: var(--laranja); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+.step {
+  background: #FFF;
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.step-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1;
+  color: var(--laranja);
+  letter-spacing: -0.03em;
+}
+.step-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--preto);
+}
+.step-txt {
+  font-size: 15px;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+}
+.step-txt em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--preto); font-weight: 500; }
+.step-tag {
+  margin-top: 14px;
+  align-self: flex-start;
+  background: var(--laranja-suave);
+  color: var(--laranja);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.steps-cta { margin-top: 60px; text-align: center; }
+
+/* ============ VALE A PENA (comparativo) ============ */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 60px;
+}
+.compare-col {
+  border-radius: 20px;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.compare-col.negative {
+  background: #FFF;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.compare-col.positive {
+  background: var(--preto-suave);
+  color: #FFF;
+  position: relative;
+}
+.compare-col.positive::before {
+  content: "🌴";
+  position: absolute;
+  top: -18px; left: 36px;
+  background: var(--laranja);
+  color: #FFF;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.compare-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--laranja);
+  margin-bottom: 6px;
+}
+.compare-col.negative .compare-tag { color: var(--cinza-suave); }
+.compare-h {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--preto);
+}
+.compare-col.positive .compare-h { color: #FFF; }
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+.compare-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 15px;
+  color: var(--cinza-texto);
+  line-height: 1.55;
+}
+.compare-col.positive .compare-list li { color: rgba(255,255,255,0.8); }
+.compare-list li::before {
+  content: "—"; color: var(--laranja); font-weight: 800; flex-shrink: 0;
+}
+.compare-list li b {
+  color: var(--preto);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+.compare-col.positive .compare-list li b { color: #FFF; }
+.compare-note {
+  max-width: 720px;
+  margin: 60px auto 0;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--preto);
+  line-height: 1.5;
+}
+.compare-cta { margin-top: 40px; text-align: center; }
+
+/* ============ REDE RCI ============ */
+.rci-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+}
+.rci-card {
+  background: #FFF;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: var(--sombra-card);
+}
+.rci-card h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--laranja);
+  margin-bottom: 8px;
+}
+.rci-card p {
+  font-size: 14px;
+  color: var(--cinza-texto);
+}
+.rci-note {
+  text-align: center;
+  color: var(--cinza-suave);
+  font-size: 13px;
+  font-style: italic;
+  margin-top: 40px;
+  max-width: 640px;
+  margin-left: auto; margin-right: auto;
+}
+
+/* ============ DEPOIMENTOS ============ */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.testimonial {
+  background: #FFF;
+  border-radius: 20px;
+  padding: 36px 30px;
+  box-shadow: var(--sombra-card);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+.testimonial::before {
+  content: "\201C";
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: var(--laranja);
+  line-height: 0.6;
+  opacity: 0.4;
+  margin-bottom: -20px;
+}
+.testimonial p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--preto);
+  font-style: italic;
+  font-weight: 400;
+}
+.testimonial .author {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--cinza-suave);
+}
+.testimonial .author strong { color: var(--preto); }
+
+/* ============ FAQ ============ */
+.faq-list {
+  max-width: 820px;
+  margin: 60px auto 0;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.faq-q {
+  width: 100%;
+  background: transparent;
+  padding: 26px 0;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--preto);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.faq-q::after {
+  content: "+";
+  color: var(--laranja);
+  font-size: 32px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: transform .3s;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+  color: var(--cinza-texto);
+  font-size: 16px;
+  line-height: 1.7;
+}
+.faq-a-inner { padding: 0 0 26px; max-width: 720px; }
+
+/* ============ FORMULÁRIO ============ */
+.form-section {
+  background: var(--preto-suave);
+  padding: 130px 56px;
+  color: #FFF;
+}
+.form-inner {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.form-txt .section-eyebrow { color: var(--laranja); }
+.form-txt h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.02;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.form-txt h2 .poetic { font-size: 0.88em; }
+.form-txt p {
+  color: rgba(255,255,255,0.75);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+.form-txt ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.form-txt ul li {
+  display: flex; gap: 10px; align-items: center;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+.form-txt ul li::before {
+  content: "✓";
+  color: var(--laranja);
+  font-weight: 700;
+}
+.form {
+  background: #FFF;
+  color: var(--preto);
+  padding: 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--cinza-texto);
+}
+.form-field input, .form-field select {
+  background: #FFF;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--preto);
+  transition: border-color .2s;
+}
+.form-field input:focus, .form-field select:focus {
+  outline: none;
+  border-color: var(--laranja);
+}
+.form-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: var(--cinza-texto);
+  line-height: 1.5;
+}
+.form-check input { margin-top: 3px; accent-color: var(--laranja); }
+.form-cta { align-self: stretch; justify-content: center; margin-top: 6px; }
+.form-note {
+  font-size: 12px;
+  color: var(--cinza-suave);
+  text-align: center;
+  margin-top: 4px;
+}
+.form-success {
+  padding: 40px;
+  text-align: center;
+  color: var(--preto);
+  display: none;
+}
+.form-success.show { display: block; }
+.form-success .icon {
+  font-size: 42px;
+  color: var(--laranja);
+  margin-bottom: 16px;
+}
+.form-success h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.form-success p { font-size: 15px; color: var(--cinza-texto); line-height: 1.6; }
+
+/* ============ CTA FINAL ============ */
+.cta-final {
+  background: linear-gradient(135deg, var(--laranja) 0%, #C25E1E 100%), url('assets/fotos/hero-fachada.jpg') center/cover no-repeat;
+  background-blend-mode: multiply;
+  color: #FFF;
+  padding: 130px 56px;
+  text-align: center;
+}
+.cta-final h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  letter-spacing: -0.005em;
+}
+.cta-final h2 .poetic { color: rgba(255,255,255,0.95); font-size: 0.9em; }
+.cta-final p {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+/* ============ RODAPÉ ============ */
+footer {
+  background: var(--preto);
+  color: rgba(255,255,255,0.7);
+  padding: 80px 56px 40px;
+  font-size: 14px;
+}
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footer-col h4 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #FFF;
+  margin-bottom: 18px;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { transition: color .2s; }
+.footer-col a:hover { color: var(--laranja); }
+.footer-brand img { height: 80px; margin-bottom: 20px; }
+.footer-brand p { font-size: 13px; line-height: 1.6; }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 12px;
+}
+
+/* ============ RESPONSIVO ============ */
+@media (max-width: 900px) {
+  .hero-nav { padding: 18px 22px; }
+  .hero-nav-links { display: none; }
+  .hero-nav-brand img { height: 52px; }
+  .hero-content { padding: 20px 22px 60px; }
+  .hero-actions { gap: 20px; }
+  .hero-price { padding-left: 0; border-left: none; }
+  .strip-wrap { padding: 0 22px; margin-top: -30px; }
+  .strip { grid-template-columns: 1fr 1fr; padding: 24px; gap: 20px; }
+  .strip-item { border-right: none; padding-right: 0; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .strip-item:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+  .chapter, .section-dark, .section-light, .form-section, .cta-final { padding: 80px 22px; }
+  .chapter-media { margin-top: 40px; aspect-ratio: 4/3; }
+  .feature-list { gap: 60px; }
+  .feature { grid-template-columns: 1fr; gap: 28px; }
+  .feature.reverse .feature-media { order: 0; }
+  .steps, .compare, .rci-grid, .testimonials { grid-template-columns: 1fr; gap: 20px; margin-top: 40px; }
+  .form-inner { grid-template-columns: 1fr; gap: 40px; }
+  .form { padding: 28px; }
+  .selo-mobiliado { width: 82px; height: 82px; font-size: 12px; top: 88px; right: 18px; }
+  .selo-mobiliado::before { font-size: 18px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .btn { padding: 16px 28px; font-size: 14px; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 42px; }
+  .chapter-title { font-size: 44px; }
+  .compare-note { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topo">
+  <nav class="hero-nav">
+    <a href="#topo" class="hero-nav-brand"><img src="assets/logos/logo-branco.png" alt="Ipioca Beach Residence"></a>
+    <ul class="hero-nav-links">
+      <li><a href="#ipioca">Ipioca</a></li>
+      <li><a href="#empreendimento">Empreendimento</a></li>
+      <li><a href="#funciona">Como funciona</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+    </ul>
+    <a href="#form" class="btn btn-primary btn-small" style="padding: 12px 22px;">Receber condições</a>
+  </nav>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Praia de Ipioca · Maceió · Alagoas</p>
+    <h1 class="hero-title">
+      Sua casa de férias<br>
+      <span class="poetic">no</span> Caribe brasileiro,<br>
+      todo ano <span class="poetic">no seu nome.</span>
+    </h1>
+    <p class="hero-sub">
+      Multipropriedade no <em class="poetic-light">Ipioca Beach Residence</em> — apartamento mobiliado, à beira-mar, com estrutura de resort completa. Vitalício, hereditário e conectado à rede <em class="poetic-light">RCI</em> em 100 países.
+    </p>
+    <div class="hero-actions">
+      <a href="#form" class="btn btn-primary">Quero conhecer as condições</a>
+      <div class="hero-price">
+        <small>A partir de</small>
+        <strong>66x R$ 620</strong>
+        <span>+ entrada reduzida</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="selo-mobiliado">JÁ<br>MOBI<br>LIADO</div>
+</section>
+
+<!-- ============ FAIXA ATRIBUTOS ============ -->
+<div class="strip-wrap">
+  <section class="strip">
+    <div class="strip-item">
+      <div class="strip-item-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 34c4-2 8-2 12 0s8 2 12 0 8-2 12 0"/>
+          <path d="M4 40c4-2 8-2 12 0s8 2 12 0 8-2 12 0"/>
+          <path d="M24 22c-4-6-10-8-14-6 2 6 6 10 12 12"/>
+          <path d="M24 22c4-6 10-8 14-6-2 6-6 10-12 12"/>
+          <circle cx="24" cy="10" r="3"/>
+        </svg>
+      </div>
+      <div class="strip-item-txt">Frente-mar<small>Praia de Ipioca · Maceió/AL</small></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-item-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 34h36v6H6z"/>
+          <path d="M10 34v-8a6 6 0 016-6h16a6 6 0 016 6v8"/>
+          <path d="M14 24v-4a3 3 0 013-3h14a3 3 0 013 3v4"/>
+        </svg>
+      </div>
+      <div class="strip-item-txt">Já mobiliado<small>Chega, abre a porta, aproveita</small></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-item-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="24" r="18"/>
+          <path d="M6 24h36"/>
+          <path d="M24 6c5 6 5 30 0 36"/>
+          <path d="M24 6c-5 6-5 30 0 36"/>
+        </svg>
+      </div>
+      <div class="strip-item-txt">Rede RCI<small>4.000+ resorts · 100 países</small></div>
+    </div>
+    <div class="strip-item">
+      <div class="strip-item-icon">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 8h22l6 6v26H10z"/>
+          <path d="M32 8v6h6"/>
+          <path d="M16 22h16M16 28h16M16 34h10"/>
+        </svg>
+      </div>
+      <div class="strip-item-txt">Vitalício<small>Registrado no seu nome · hereditário</small></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CAPÍTULO IPIOCA ============ -->
+<section class="chapter" id="ipioca">
+  <div class="chapter-narrow">
+    <p class="chapter-coords">
+      <span>Praia de Ipioca</span>
+      <span>Maceió</span>
+      <span>Alagoas</span>
+      <span>09° 26′ S · 35° 32′ O</span>
+    </p>
+    <h2 class="chapter-title">
+      <span class="poetic">Onde</span> Maceió<br>
+      ainda tem <span class="poetic">silêncio.</span>
+    </h2>
+    <p class="chapter-lead">
+      A 30 minutos do aeroporto, Ipioca é o pedaço do litoral norte de Alagoas que <em class="poetic-dark">ainda amanhece devagar</em>. Coqueiral denso, mar em tons de turquesa, piscinas naturais que aparecem na maré baixa. É aqui — não no centro de Maceió — que a sua casa de férias espera.
+    </p>
+  </div>
+  <div class="chapter-media" style="background-image: url('assets/fotos/hero-fachada.jpg');"></div>
+  <p class="chapter-caption">Ipioca Beach Residence · Litoral Norte de Alagoas · 30 min do Aeroporto Zumbi dos Palmares</p>
+</section>
+
+<!-- ============ CAPÍTULO EMPREENDIMENTO ============ -->
+<section class="section-dark" id="empreendimento">
+  <div class="section-inner">
+    <p class="section-eyebrow">O empreendimento</p>
+    <h2 class="section-title">Um <span class="poetic">resort</span><br>que também é <span class="poetic">seu.</span></h2>
+    <p class="section-lead">Cinco alas de apartamentos entre coqueirais, piscina que espelha o mar, restaurante e serviço hoteleiro completo. A estrutura de um resort premiado — com a diferença de que o apartamento é <em class="poetic-light">seu</em>.</p>
+
+    <div class="feature-list">
+      <div class="feature">
+        <div class="feature-txt-block">
+          <div class="feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 40c8-4 12-4 20 0s12 4 20 0 12 0 12 0"/>
+              <path d="M6 48c8-4 12-4 20 0s12 4 20 0 12 0 12 0"/>
+              <path d="M12 40V22c0-6 4-10 10-10s10 4 10 10"/>
+              <path d="M32 40V22c0-6 4-10 10-10s10 4 10 10"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Piscina que espelha o mar</h3>
+          <p class="feature-txt">Extensa, ao ar livre, com bar molhado e ala infantil. Uma faixa de água que <em class="poetic-light">continua a horizontal</em> da praia — para quem quer o mar sem sair do resort.</p>
+        </div>
+        <div class="feature-media"><img src="assets/fotos/sobre.jpg" alt="Piscina do resort"></div>
+      </div>
+
+      <div class="feature reverse">
+        <div class="feature-txt-block">
+          <div class="feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 12v40"/>
+              <path d="M12 12c0 6 3 10 8 10s8-4 8-10"/>
+              <path d="M52 12v18a4 4 0 01-4 4h-4a4 4 0 01-4-4V12"/>
+              <path d="M44 30v22"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Restaurante, bar e gastronomia</h3>
+          <p class="feature-txt">Café da manhã, almoço e jantar assinados. Você não precisa nem <em class="poetic-light">pensar</em> em cozinhar — a menos que queira, na sua cozinha equipada.</p>
+        </div>
+        <div class="feature-media"><img src="assets/fotos/about.png" alt="Restaurante do resort"></div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-txt-block">
+          <div class="feature-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 52h48"/>
+              <path d="M14 52V26l18-14 18 14v26"/>
+              <path d="M26 52V36h12v16"/>
+              <circle cx="34" cy="42" r="1.5"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Apartamento pronto pra usar</h3>
+          <p class="feature-txt">Sala, cozinha, quartos, banheiros — <em class="poetic-light">tudo entregue mobiliado</em>. Você chega com a mala, arruma o guarda-roupa, senta na varanda com uma água de coco e é como se estivesse ali há anos.</p>
+        </div>
+        <div class="feature-media"><img src="assets/fotos/hero-fachada.jpg" alt="Apartamento mobiliado"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="section-light" id="funciona">
+  <div class="section-inner">
+    <p class="section-eyebrow">Como funciona</p>
+    <h2 class="section-title">Uma <span class="poetic">fração de imóvel</span><br>com semanas garantidas<br>todos os anos.</h2>
+    <p class="section-lead">Multipropriedade não é timeshare. Não é aluguel. Não é "clube de férias". <b>É um imóvel real, no seu CPF, registrado em cartório</b>, com direito de uso definido para sempre.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Você escolhe sua cota</h3>
+        <p class="step-txt">1, 2 ou 4 semanas por ano no Ipioca Beach Residence. Cada cota é uma <em>fração ideal</em> do apartamento, registrada em cartório em seu nome.</p>
+        <span class="step-tag">Fração ideal</span>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Suas semanas ficam garantidas</h3>
+        <p class="step-txt">Todo ano, nas datas contratadas, você usa o apartamento. Chega com a mala e pronto — a manutenção, a limpeza e o serviço, tudo é <em>responsabilidade do resort</em>.</p>
+        <span class="step-tag">Sem dor de cabeça</span>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Se quiser variar, troca pela RCI</h3>
+        <p class="step-txt">Prefere Grécia esse ano? Cancún? Portugal? Deposita a sua semana na <em>rede RCI</em> e troca por mais de 4.000 resorts em 100 países.</p>
+        <span class="step-tag">Rede internacional</span>
+      </div>
+    </div>
+
+    <div class="steps-cta">
+      <a href="#form" class="btn btn-secondary">Falar com um consultor</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALE A PENA (COMPARATIVO) ============ -->
+<section class="section-light" style="background: var(--bege);">
+  <div class="section-inner">
+    <p class="section-eyebrow">Faz as contas com a gente</p>
+    <h2 class="section-title">Quanto você já gasta<br>em férias <span class="poetic">sem ficar</span><br>com nada?</h2>
+    <p class="section-lead">A conta abaixo é baseada no perfil real de quem hoje é dono no Ipioca Beach Residence: casais que gastam de R$ 5 mil a R$ 10 mil por viagem, uma ou duas vezes por ano.</p>
+
+    <div class="compare">
+      <div class="compare-col negative">
+        <p class="compare-tag">Como está hoje</p>
+        <h3 class="compare-h">Hotel novo, ano após ano</h3>
+        <ul class="compare-list">
+          <li>Aluga hotel/resort na alta temporada em Maceió, Porto de Galinhas, Natal…</li>
+          <li><b>R$ 5.000 a R$ 10.000</b> por viagem</li>
+          <li>Em 10 anos: <b>até R$ 100.000</b> em férias</li>
+          <li>No fim: <b>nenhum patrimônio</b>. Começa de novo todo ano.</li>
+        </ul>
+      </div>
+      <div class="compare-col positive">
+        <p class="compare-tag">Do jeito Ipioca</p>
+        <h3 class="compare-h">Sua fração, para sempre</h3>
+        <ul class="compare-list">
+          <li>Adquire sua cota no Ipioca Beach Residence</li>
+          <li><b>A partir de 66x R$ 620</b> + entrada reduzida</li>
+          <li>Semanas garantidas todos os anos, <b>para sempre</b></li>
+          <li>Um <b>imóvel no seu nome</b>, hereditário, com serviço de resort e rede RCI</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="compare-note">O dinheiro é praticamente o mesmo.<br>O que muda é o que sobra pra você.</p>
+
+    <div class="compare-cta">
+      <a href="#form" class="btn btn-primary">Quero simular a minha cota</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REDE RCI ============ -->
+<section class="chapter">
+  <div class="chapter-narrow">
+    <p class="chapter-coords"><span>Rede RCI</span><span>Inclusa</span></p>
+    <h2 class="chapter-title">Se um ano você não vier,<br>o mundo vem <span class="poetic">até você.</span></h2>
+    <p class="chapter-lead">A cota no Ipioca Beach Residence te conecta à <em class="poetic-dark">RCI</em>, a maior rede de intercâmbio de propriedades de férias do planeta. Deposita a sua semana, escolhe outro destino: <b>mais de 4.000 resorts em 100 países</b>.</p>
+  </div>
+  <div class="section-inner" style="max-width: 1080px; margin: 0 auto;">
+    <div class="rci-grid">
+      <div class="rci-card"><h4>Nordeste brasileiro</h4><p>Bahia, Ceará, Rio Grande do Norte, Pernambuco</p></div>
+      <div class="rci-card"><h4>Europa</h4><p>Portugal, Espanha, Itália, Grécia</p></div>
+      <div class="rci-card"><h4>Caribe</h4><p>República Dominicana, México, Aruba</p></div>
+      <div class="rci-card"><h4>Estados Unidos</h4><p>Orlando, Miami, Las Vegas</p></div>
+      <div class="rci-card"><h4>América do Sul</h4><p>Argentina, Chile, Uruguai</p></div>
+      <div class="rci-card"><h4>Ásia e Oceania</h4><p>Tailândia, Bali, Austrália</p></div>
+    </div>
+    <p class="rci-note">Depósito de semana e troca sujeitos às regras da rede RCI. O consultor explica o funcionamento completo na primeira ligação.</p>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section class="section-light" style="background: var(--bege-claro);" id="depoimentos">
+  <div class="section-inner">
+    <p class="section-eyebrow">Quem já é dono</p>
+    <h2 class="section-title">Casais, famílias e aposentados<br>que <span class="poetic">cansaram</span> de recomeçar<br>todo ano.</h2>
+    <p class="section-lead">Nossos donos vêm de todos os cantos: São Paulo, Aracaju, Salvador, São Luís, Goiânia, Brasília, interior do Acre. Já viajavam de 1 a 2 vezes por ano — e decidiram que a próxima viagem começa na porta de casa, não numa central de reservas.</p>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>Cansei de gastar rios de dinheiro em hotel todo ano e no fim não ter nada. Aqui é meu, dos meus filhos e dos netos que vierem.</p>
+        <p class="author"><strong>Antônio &amp; Adriana</strong><br>Brasília / DF</p>
+      </div>
+      <div class="testimonial">
+        <p>Já tinha comprado em outro empreendimento no Nordeste. O Ipioca ganhou pela localização — Ipioca é diferente. E o serviço é de resort mesmo.</p>
+        <p class="author"><strong>Pablo &amp; Cláudia</strong><br>Aracaju / SE</p>
+      </div>
+      <div class="testimonial">
+        <p>Nunca tinha ido a Maceió. Fui conhecer, gostei, e decidi na mesma semana. Meu marido vem comigo em janeiro e o resto do ano eu troco pela RCI.</p>
+        <p class="author"><strong>Renato</strong><br>Tarauacá / AC</p>
+      </div>
+    </div>
+    <p class="rci-note" style="margin-top: 30px;">Depoimentos ilustrativos baseados no perfil real de compradores. A ser substituído por depoimentos oficiais autorizados.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-light" id="faq">
+  <div class="section-inner">
+    <p class="section-eyebrow" style="text-align: center;">Perguntas frequentes</p>
+    <h2 class="section-title" style="text-align: center; margin-left: auto; margin-right: auto;">Tudo que você <span class="poetic">precisa</span><br>saber antes.</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Multipropriedade é a mesma coisa que timeshare?</button>
+        <div class="faq-a"><div class="faq-a-inner">Não. Timeshare é direito de uso por tempo determinado — quando o prazo acaba, acabou. Multipropriedade é <b>fração de imóvel de verdade</b>: você é dono de uma fração ideal do apartamento, registrada em cartório, com prazo indeterminado. É seu, para sempre, e passa como herança.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Meu apartamento é sempre o mesmo?</button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Você adquire um apartamento específico do Ipioca Beach Residence. Nas semanas contratadas, aquele apartamento é seu.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quantas semanas por ano eu tenho direito?</button>
+        <div class="faq-a"><div class="faq-a-inner">Depende da cota que você escolhe: 1 semana, 2 semanas ou 4 semanas por ano. Semanas de alta e média temporada podem ter valores diferentes — o consultor te explica na ligação.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Se eu não quiser vir em algum ano, o que acontece?</button>
+        <div class="faq-a"><div class="faq-a-inner">Você pode depositar sua semana na rede RCI e trocar por outro destino, alugar a semana para terceiros através da administração do resort, ou emprestar para familiares/amigos. A cota é sua — você decide.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Existe taxa mensal ou anual?</button>
+        <div class="faq-a"><div class="faq-a-inner">Sim, existe uma taxa condominial anual que cobre manutenção, limpeza, funcionários e áreas comuns do resort. O valor é diluído entre todos os proprietários — o consultor apresenta os números exatos na conversa.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Posso vender ou passar como herança depois?</button>
+        <div class="faq-a"><div class="faq-a-inner">Pode. É um imóvel registrado em seu nome, com escritura, então segue as regras normais de compra e venda de imóvel. Também pode transferir para herdeiros.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Como é o pagamento?</button>
+        <div class="faq-a"><div class="faq-a-inner">Entrada reduzida + 66 parcelas mensais fixas a partir de R$ 620. Formas de pagamento e simulação personalizada são feitas pelo consultor.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Preciso viajar até Maceió pra fechar?</button>
+        <div class="faq-a"><div class="faq-a-inner">Não. Toda a apresentação é feita por videochamada, com o casal se preferir. Se quiser conhecer o empreendimento pessoalmente antes de decidir, agendamos a visita.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULÁRIO ============ -->
+<section class="form-section" id="form">
+  <div class="form-inner">
+    <div class="form-txt">
+      <p class="section-eyebrow">Receber condições</p>
+      <h2>Vamos te apresentar tudo — <span class="poetic">a você e ao seu par.</span></h2>
+      <p>Deixe seus dados. Um dos nossos consultores entra em contato para agendar uma apresentação de 40 minutos, por videochamada. Sem compromisso.</p>
+      <ul>
+        <li>Sem pressão de venda</li>
+        <li>Sem letra miúda no orçamento</li>
+        <li>Sem envio de spam</li>
+      </ul>
+    </div>
+
+    <form class="form" id="lp-form" novalidate>
+      <div class="form-field">
+        <label for="f-nome">Seu nome</label>
+        <input id="f-nome" name="nome" type="text" placeholder="Como você quer ser chamado(a)" required>
+      </div>
+      <div class="form-field">
+        <label for="f-email">E-mail</label>
+        <input id="f-email" name="email" type="email" placeholder="seu.melhor@email.com" required>
+      </div>
+      <div class="form-field">
+        <label for="f-tel">WhatsApp / celular</label>
+        <input id="f-tel" name="telefone" type="tel" placeholder="(DDD) 9XXXX-XXXX" required>
+      </div>
+      <div class="form-field">
+        <label for="f-cidade">Sua cidade</label>
+        <input id="f-cidade" name="cidade" type="text" placeholder="Ex: Aracaju / SE" required>
+      </div>
+      <div class="form-field">
+        <label for="f-horario">Melhor horário pra falarmos</label>
+        <select id="f-horario" name="horario" required>
+          <option value="">Selecione…</option>
+          <option>Manhã (9h–12h)</option>
+          <option>Tarde (12h–18h)</option>
+          <option>Noite (18h–21h)</option>
+          <option>Qualquer horário</option>
+        </select>
+      </div>
+      <label class="form-check">
+        <input type="checkbox" name="parceiro" value="sim">
+        Quero que meu(minha) parceiro(a) participe da apresentação.
+      </label>
+      <label class="form-check">
+        <input type="checkbox" name="consentimento" required>
+        Aceito receber contato do time comercial do Ipioca Beach Residence.
+      </label>
+      <button type="submit" class="btn btn-primary form-cta">Quero receber a apresentação</button>
+      <p class="form-note">🔒 Seus dados vão só para o time comercial. Nada de spam.</p>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <div class="icon">✓</div>
+      <h3>Recebemos!</h3>
+      <p>Um consultor vai te ligar em até 1 dia útil, no horário que você escolheu. Enquanto isso, sinta-se em casa — a sua próxima temporada começou.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <h2>Sua próxima<br><span class="poetic">temporada</span><br>já começou.</h2>
+  <p>Deixa a gente te mostrar como funciona — sem pressão, sem letra miúda. A conversa dura 40 minutos.</p>
+  <a href="#form" class="btn btn-white-outline">Quero conhecer as condições</a>
+</section>
+
+<!-- ============ RODAPÉ ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col footer-brand">
+      <img src="assets/logos/logo-branco.png" alt="Ipioca Beach Residence">
+      <p><em>Ipioca Beach Residence</em><br>Multipropriedade no litoral norte de Alagoas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#ipioca">Ipioca</a></li>
+        <li><a href="#empreendimento">O empreendimento</a></li>
+        <li><a href="#funciona">Como funciona</a></li>
+        <li><a href="#faq">Perguntas frequentes</a></li>
+        <li><a href="#form">Receber condições</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li>Comercial: [email a preencher]</li>
+        <li>Telefone: [(82) XXXX-XXXX]</li>
+        <li>Sala de vendas em Maceió/AL</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="#">Política de privacidade</a></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li>Registro de incorporação: RI nº [a preencher]</li>
+        <li style="font-size: 11px; opacity: 0.7;">Imagens meramente ilustrativas. Sujeito a disponibilidade e condições comerciais vigentes.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Ipioca Beach Residence · Todos os direitos reservados</p>
+    <p>Feito com carinho no litoral norte de Alagoas</p>
+  </div>
+</footer>
+
+<script>
+// FAQ toggle
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const answer = q.nextElementSibling;
+    const isOpen = item.classList.toggle('open');
+    answer.style.maxHeight = isOpen ? answer.scrollHeight + 'px' : '0';
+  });
+});
+
+// Formulário
+// TODO: substituir por endpoint real (Formspree, Kommo webhook, n8n etc.)
+// Formspree exemplo: form.action = 'https://formspree.io/f/SEU_ID';
+const form = document.getElementById('lp-form');
+const success = document.getElementById('form-success');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  // Simulação local — o endpoint real deve ser plugado aqui:
+  // await fetch('https://formspree.io/f/SEU_ID', { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+
+  console.log('Lead capturado:', data);
+
+  form.style.display = 'none';
+  success.classList.add('show');
+  setTimeout(() => { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
+});
+
+// Máscara simples de telefone
+const telInput = document.getElementById('f-tel');
+telInput.addEventListener('input', (e) => {
+  let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+  if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+  else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+  e.target.value = v;
+});
+</script>
+
+</body>
+</html>
