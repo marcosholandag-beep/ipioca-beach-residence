@@ -521,6 +521,126 @@ em.poetic-light {
 .section-bege .chapter-title { color: var(--preto); }
 .section-bege .chapter-lead { color: var(--cinza-texto); }
 
+/* CTA flutuante */
+.float-cta {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 100;
+  background: var(--laranja);
+  color: #FFF;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 14px 40px rgba(234,128,54,0.5), 0 0 0 4px rgba(255,255,255,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  pointer-events: none;
+  transition: opacity .35s ease, transform .35s ease, background .2s;
+}
+.float-cta.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.float-cta:hover { background: var(--laranja-hover); transform: translateY(-2px) scale(1.02); }
+.float-cta::before {
+  content: "💬";
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .float-cta {
+    bottom: 20px; right: 20px; left: 20px;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Seção "Quem já é dono" — foto com overlay */
+.owners {
+  position: relative;
+  min-height: 520px;
+  background: url('assets/fotos/ipioca-praia-turquesa.jpg') center/cover no-repeat;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  padding: 130px 56px;
+  color: #FFF;
+}
+.owners::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(13,90,110,0.55) 0%, rgba(0,0,0,0.65) 100%);
+  z-index: 1;
+}
+.owners-inner {
+  position: relative; z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.owners-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--laranja);
+  margin-bottom: 22px;
+}
+.owners h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: clamp(46px, 5.8vw, 84px);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+.owners h2 .poetic { color: var(--laranja); font-size: 0.9em; }
+.owners p {
+  font-size: 19px;
+  line-height: 1.65;
+  opacity: 0.95;
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+.owners p em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: #FFF; }
+.owners-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+.owners-stat strong {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1;
+  color: var(--laranja);
+  letter-spacing: -0.01em;
+}
+.owners-stat span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.75);
+  margin-top: 6px;
+  display: block;
+}
+
 /* Divisor visual sutil entre seções (símbolo laranja centrado) */
 .sep {
   padding: 0;
@@ -1310,6 +1430,22 @@ footer {
   </div>
 </section>
 
+<!-- ============ QUEM JÁ É DONO ============ -->
+<section class="owners" id="donos">
+  <div class="owners-inner">
+    <p class="owners-eyebrow">Quem já é dono</p>
+    <h2>Chegam, olham o mar<br>e viram <span class="poetic">donos.</span></h2>
+    <p>Casais, aposentados, famílias inteiras — <em>de todo canto do Brasil</em> — que enfim decidiram parar de recomeçar do zero todo verão.</p>
+    <p>Cada um chegou de um jeito diferente. Alguns já conheciam Maceió há vinte anos. Outros nunca tinham posto o pé em Alagoas. Mas todos, no primeiro café da manhã na varanda, sentiram a mesma coisa: <em>é isso.</em> E ficaram.</p>
+    <p>Muitos hoje trazem os netos. Alguns nem esperam férias — vêm num feriado prolongado só pra sentir o cheiro do mar antes do escritório de segunda.</p>
+    <div class="owners-stats">
+      <div class="owners-stat"><strong>4.000+</strong><span>Resorts na rede RCI</span></div>
+      <div class="owners-stat"><strong>100</strong><span>Países pra trocar</span></div>
+      <div class="owners-stat"><strong>52</strong><span>Semanas por ano · sempre suas</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="section-white" id="faq">
   <div class="section-inner">
@@ -1407,6 +1543,9 @@ footer {
   <a href="#form" class="btn btn-white-outline">Quero conhecer as condições</a>
 </section>
 
+<!-- ============ CTA FLUTUANTE ============ -->
+<a href="#form" class="float-cta" id="float-cta">Falar com consultor</a>
+
 <!-- ============ RODAPÉ ============ -->
 <footer>
   <div class="footer-grid">
@@ -1497,6 +1636,20 @@ document.querySelectorAll('[data-carousel]').forEach(car => {
   dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.idx); reset(); }));
   reset();
 });
+
+// CTA flutuante — aparece depois de rolar o hero, esconde no form
+const floatCta = document.getElementById('float-cta');
+const formSec = document.getElementById('form');
+const heroSec = document.querySelector('.hero');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const heroBottom = heroSec.offsetHeight;
+  const formRect = formSec.getBoundingClientRect();
+  const inForm = formRect.top < window.innerHeight * 0.7 && formRect.bottom > 0;
+  const passedHero = scrolled > heroBottom - 100;
+  if (passedHero && !inForm) floatCta.classList.add('visible');
+  else floatCta.classList.remove('visible');
+}, { passive: true });
 
 // Máscara simples de telefone
 const telInput = document.getElementById('f-tel');
