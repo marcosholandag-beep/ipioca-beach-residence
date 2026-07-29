@@ -509,6 +509,44 @@ em.poetic-light {
 .section-light .section-lead { color: var(--cinza-texto); }
 .section-light .section-eyebrow { color: var(--laranja); }
 
+.section-white { background: #FFFFFF; padding: 150px 56px; }
+.section-white .section-title { color: var(--preto); }
+.section-white .section-lead { color: var(--cinza-texto); }
+.section-white .section-eyebrow { color: var(--laranja); }
+
+.section-bege { background: var(--bege); padding: 150px 56px; }
+.section-bege .section-title { color: var(--preto); }
+.section-bege .section-lead { color: var(--cinza-texto); }
+.section-bege .section-eyebrow { color: var(--laranja); }
+.section-bege .chapter-title { color: var(--preto); }
+.section-bege .chapter-lead { color: var(--cinza-texto); }
+
+/* Divisor visual sutil entre seções (símbolo laranja centrado) */
+.sep {
+  padding: 0;
+  height: 1px;
+  background: transparent;
+  position: relative;
+}
+.sep::before {
+  content: "";
+  position: absolute;
+  top: -20px; left: 50%;
+  transform: translateX(-50%);
+  width: 6px; height: 6px;
+  background: var(--laranja);
+  border-radius: 50%;
+}
+.sep::after {
+  content: "";
+  position: absolute;
+  top: -18px; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--laranja), transparent);
+  opacity: 0.3;
+}
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -580,23 +618,29 @@ em.poetic-light {
   border: 1px solid rgba(0,0,0,0.06);
 }
 .compare-col.positive {
-  background: var(--preto-suave);
+  background: var(--laranja);
   color: #FFF;
   position: relative;
+  box-shadow: 0 30px 60px rgba(234,128,54,0.35);
 }
 .compare-col.positive::before {
   content: "🌴";
   position: absolute;
   top: -18px; left: 36px;
-  background: var(--laranja);
-  color: #FFF;
+  background: #FFF;
+  color: var(--laranja);
   width: 40px; height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
+.section-dark .compare-tag { color: rgba(255,255,255,0.6); }
+.compare-col.positive .compare-tag { color: rgba(255,255,255,0.85); }
+.compare-col.positive .compare-list li::before { color: #FFF; opacity: 0.85; }
+.compare-col.positive .compare-list li b { color: #FFF; }
 .compare-tag {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
@@ -1175,7 +1219,7 @@ footer {
 </section>
 
 <!-- ============ COMO FUNCIONA ============ -->
-<section class="section-light" id="funciona">
+<section class="section-white" id="funciona">
   <div class="section-inner">
     <p class="section-eyebrow">Como funciona</p>
     <h2 class="section-title">Uma <span class="poetic">fração de imóvel</span><br>com semanas garantidas<br>todos os anos.</h2>
@@ -1209,11 +1253,11 @@ footer {
 </section>
 
 <!-- ============ VALE A PENA (COMPARATIVO) ============ -->
-<section class="section-light" style="background: var(--bege);">
+<section class="section-dark">
   <div class="section-inner">
     <p class="section-eyebrow">Faz as contas com a gente</p>
     <h2 class="section-title">Quanto você já gasta<br>em férias <span class="poetic">sem ficar</span><br>com nada?</h2>
-    <p class="section-lead">A conta abaixo é baseada no perfil real de quem hoje é dono no Ipioca Beach Residence: casais que gastam de R$ 5 mil a R$ 10 mil por viagem, uma ou duas vezes por ano.</p>
+    <p class="section-lead" style="color: rgba(255,255,255,0.75);">A conta abaixo é baseada no perfil real de quem hoje é dono no Ipioca Beach Residence: casais que gastam de R$ 5 mil a R$ 10 mil por viagem, uma ou duas vezes por ano.</p>
 
     <div class="compare">
       <div class="compare-col negative">
@@ -1238,7 +1282,7 @@ footer {
       </div>
     </div>
 
-    <p class="compare-note">O dinheiro é praticamente o mesmo.<br>O que muda é o que sobra pra você.</p>
+    <p class="compare-note" style="color: #FFF;">O dinheiro é praticamente o mesmo.<br>O que muda é o que sobra pra você.</p>
 
     <div class="compare-cta">
       <a href="#form" class="btn btn-primary">Quero simular a minha cota</a>
@@ -1247,7 +1291,7 @@ footer {
 </section>
 
 <!-- ============ REDE RCI ============ -->
-<section class="chapter">
+<section class="chapter section-bege">
   <div class="chapter-narrow">
     <p class="chapter-coords"><span>Rede RCI</span><span>Inclusa</span></p>
     <h2 class="chapter-title">Se um ano você não vier,<br>o mundo vem <span class="poetic">até você.</span></h2>
@@ -1267,7 +1311,7 @@ footer {
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="section-light" id="faq">
+<section class="section-white" id="faq">
   <div class="section-inner">
     <p class="section-eyebrow" style="text-align: center;">Perguntas frequentes</p>
     <h2 class="section-title" style="text-align: center; margin-left: auto; margin-right: auto;">Tudo que você <span class="poetic">precisa</span><br>saber antes.</h2>
