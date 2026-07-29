@@ -135,7 +135,7 @@ em.poetic-light {
 .hero {
   position: relative;
   min-height: 100vh;
-  background: url('assets/fotos/hero-fachada.jpg') center/cover no-repeat;
+  background: url('assets/fotos/ipioca-aerea-sunset.jpg') center/cover no-repeat;
   isolation: isolate;
   display: flex;
   flex-direction: column;
@@ -449,8 +449,56 @@ em.poetic-light {
   overflow: hidden;
   aspect-ratio: 4/3;
   box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  position: relative;
 }
 .feature-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Carousel */
+.carousel { background: #000; }
+.carousel-track { position: relative; width: 100%; height: 100%; }
+.carousel-slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+.carousel-slide.active { opacity: 1; }
+.carousel-btn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.9);
+  color: var(--preto);
+  border-radius: 50%;
+  font-size: 26px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .2s, background .2s;
+  z-index: 2;
+}
+.carousel:hover .carousel-btn { opacity: 1; }
+.carousel-btn:hover { background: #FFF; }
+.carousel-btn.prev { left: 14px; }
+.carousel-btn.next { right: 14px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 16px; left: 0; right: 0;
+  display: flex; gap: 8px; justify-content: center;
+  z-index: 2;
+}
+.carousel-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.carousel-dot.active { background: #FFF; transform: scale(1.4); }
+@media (max-width: 900px) {
+  .carousel-btn { opacity: 1; }
+}
 
 /* ============ COMO FUNCIONA (3 passos) ============ */
 .section-light {
@@ -847,7 +895,7 @@ em.poetic-light {
 
 /* ============ CTA FINAL ============ */
 .cta-final {
-  background: linear-gradient(135deg, var(--laranja) 0%, #C25E1E 100%), url('assets/fotos/hero-fachada.jpg') center/cover no-repeat;
+  background: linear-gradient(135deg, var(--laranja) 0%, #C25E1E 100%), url('assets/fotos/ipioca-aerea-sunset.jpg') center/cover no-repeat;
   background-blend-mode: multiply;
   color: #FFF;
   padding: 130px 56px;
@@ -1050,8 +1098,8 @@ footer {
       A 30 minutos do aeroporto, Ipioca é o pedaço do litoral norte de Alagoas que <em class="poetic-dark">ainda amanhece devagar</em>. Coqueiral denso, mar em tons de turquesa, piscinas naturais que aparecem na maré baixa. É aqui — não no centro de Maceió — que a sua casa de férias espera.
     </p>
   </div>
-  <div class="chapter-media" style="background-image: url('assets/fotos/hero-fachada.jpg');"></div>
-  <p class="chapter-caption">Ipioca Beach Residence · Litoral Norte de Alagoas · 30 min do Aeroporto Zumbi dos Palmares</p>
+  <div class="chapter-media" style="background-image: url('assets/fotos/ipioca-praia-turquesa.jpg');"></div>
+  <p class="chapter-caption">Praia de Ipioca · Litoral Norte de Alagoas · 30 min do Aeroporto Zumbi dos Palmares</p>
 </section>
 
 <!-- ============ CAPÍTULO EMPREENDIMENTO ============ -->
@@ -1075,7 +1123,7 @@ footer {
           <h3 class="feature-title">Piscina que espelha o mar</h3>
           <p class="feature-txt">Extensa, ao ar livre, com bar molhado e ala infantil. Uma faixa de água que <em class="poetic-light">continua a horizontal</em> da praia — para quem quer o mar sem sair do resort.</p>
         </div>
-        <div class="feature-media"><img src="assets/fotos/sobre.jpg" alt="Piscina do resort"></div>
+        <div class="feature-media"><img src="assets/fotos/ipioca-aerea-sunset.jpg" alt="Piscina do resort ao pôr do sol"></div>
       </div>
 
       <div class="feature reverse">
@@ -1088,10 +1136,23 @@ footer {
               <path d="M44 30v22"/>
             </svg>
           </div>
-          <h3 class="feature-title">Restaurante, bar e gastronomia</h3>
-          <p class="feature-txt">Café da manhã, almoço e jantar assinados. Você não precisa nem <em class="poetic-light">pensar</em> em cozinhar — a menos que queira, na sua cozinha equipada.</p>
+          <h3 class="feature-title">Restaurante Canoas &amp; gastronomia</h3>
+          <p class="feature-txt">Café da manhã, almoço e jantar assinados no restaurante do empreendimento. Você não precisa nem <em class="poetic-light">pensar</em> em cozinhar — a menos que queira, na sua cozinha equipada.</p>
         </div>
-        <div class="feature-media"><img src="assets/fotos/about.png" alt="Restaurante do resort"></div>
+        <div class="feature-media carousel" data-carousel>
+          <div class="carousel-track">
+            <img src="assets/fotos/restaurante-1.jpg" alt="Restaurante Canoas — vista 1" class="carousel-slide active">
+            <img src="assets/fotos/restaurante-2.jpg" alt="Restaurante Canoas — vista 2" class="carousel-slide">
+            <img src="assets/fotos/restaurante-3.jpg" alt="Restaurante Canoas — vista 3" class="carousel-slide">
+          </div>
+          <button class="carousel-btn prev" aria-label="Foto anterior">‹</button>
+          <button class="carousel-btn next" aria-label="Próxima foto">›</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" data-idx="0" aria-label="Foto 1"></button>
+            <button class="carousel-dot" data-idx="1" aria-label="Foto 2"></button>
+            <button class="carousel-dot" data-idx="2" aria-label="Foto 3"></button>
+          </div>
+        </div>
       </div>
 
       <div class="feature">
@@ -1107,7 +1168,7 @@ footer {
           <h3 class="feature-title">Apartamento pronto pra usar</h3>
           <p class="feature-txt">Sala, cozinha, quartos, banheiros — <em class="poetic-light">tudo entregue mobiliado</em>. Você chega com a mala, arruma o guarda-roupa, senta na varanda com uma água de coco e é como se estivesse ali há anos.</p>
         </div>
-        <div class="feature-media"><img src="assets/fotos/hero-fachada.jpg" alt="Apartamento mobiliado"></div>
+        <div class="feature-media"><img src="assets/fotos/apartamento-quarto.jpg" alt="Quarto do apartamento mobiliado"></div>
       </div>
     </div>
   </div>
@@ -1300,20 +1361,6 @@ footer {
         <label for="f-tel">WhatsApp / celular</label>
         <input id="f-tel" name="telefone" type="tel" placeholder="(DDD) 9XXXX-XXXX" required>
       </div>
-      <div class="form-field">
-        <label for="f-cidade">Sua cidade</label>
-        <input id="f-cidade" name="cidade" type="text" placeholder="Ex: Aracaju / SE" required>
-      </div>
-      <div class="form-field">
-        <label for="f-horario">Melhor horário pra falarmos</label>
-        <select id="f-horario" name="horario" required>
-          <option value="">Selecione…</option>
-          <option>Manhã (9h–12h)</option>
-          <option>Tarde (12h–18h)</option>
-          <option>Noite (18h–21h)</option>
-          <option>Qualquer horário</option>
-        </select>
-      </div>
       <label class="form-check">
         <input type="checkbox" name="parceiro" value="sim">
         Quero que meu(minha) parceiro(a) participe da apresentação.
@@ -1346,7 +1393,7 @@ footer {
   <div class="footer-grid">
     <div class="footer-col footer-brand">
       <img src="assets/logos/logo-branco.png" alt="Ipioca Beach Residence">
-      <p><em>Ipioca Beach Residence</em><br>Multipropriedade no litoral norte de Alagoas.</p>
+      <p><em>Ipioca Beach Residence</em><br>Multipropriedade pronta pra usar no litoral norte de Alagoas.</p>
     </div>
     <div class="footer-col">
       <h4>Navegação</h4>
@@ -1361,18 +1408,19 @@ footer {
     <div class="footer-col">
       <h4>Contato</h4>
       <ul>
-        <li>Comercial: [email a preencher]</li>
-        <li>Telefone: [(82) XXXX-XXXX]</li>
-        <li>Sala de vendas em Maceió/AL</li>
+        <li><a href="mailto:crc@ipiocabeachresidence.com.br">crc@ipiocabeachresidence.com.br</a></li>
+        <li><a href="tel:+558287884755">+55 82 8788-4755</a></li>
+        <li style="margin-top: 6px;">Av. Dr. Antônio Gouveia, 845<br>Pajuçara, Maceió — AL<br>CEP 57030-170</li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Institucional</h4>
       <ul>
-        <li><a href="#">Política de privacidade</a></li>
+        <li>Ipioca Empreendimentos Imobiliários</li>
+        <li>CNPJ: 27.995.600/0001-90</li>
+        <li style="margin-top: 10px;"><a href="#">Política de privacidade</a></li>
         <li><a href="#">Termos de uso</a></li>
-        <li>Registro de incorporação: RI nº [a preencher]</li>
-        <li style="font-size: 11px; opacity: 0.7;">Imagens meramente ilustrativas. Sujeito a disponibilidade e condições comerciais vigentes.</li>
+        <li style="font-size: 11px; opacity: 0.7; margin-top: 10px;">Imagens meramente ilustrativas. Sujeito a disponibilidade e condições comerciais vigentes.</li>
       </ul>
     </div>
   </div>
@@ -1410,6 +1458,25 @@ form.addEventListener('submit', async (e) => {
   form.style.display = 'none';
   success.classList.add('show');
   setTimeout(() => { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
+});
+
+// Carrossel do restaurante
+document.querySelectorAll('[data-carousel]').forEach(car => {
+  const slides = car.querySelectorAll('.carousel-slide');
+  const dots = car.querySelectorAll('.carousel-dot');
+  let idx = 0;
+  let autoTimer;
+
+  const go = (n) => {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  };
+  const reset = () => { clearInterval(autoTimer); autoTimer = setInterval(() => go(idx + 1), 5000); };
+  car.querySelector('.prev').addEventListener('click', () => { go(idx - 1); reset(); });
+  car.querySelector('.next').addEventListener('click', () => { go(idx + 1); reset(); });
+  dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.idx); reset(); }));
+  reset();
 });
 
 // Máscara simples de telefone
