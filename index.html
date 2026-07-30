@@ -135,7 +135,7 @@ em.poetic-light {
 .hero {
   position: relative;
   min-height: 100vh;
-  background: url('assets/fotos/ipioca-aerea-sunset.jpg') center/cover no-repeat;
+  background: url('assets/fotos/ipioca-praia-turquesa.jpg') center/cover no-repeat;
   isolation: isolate;
   display: flex;
   flex-direction: column;
@@ -576,7 +576,7 @@ em.poetic-light {
 .owners {
   position: relative;
   min-height: 520px;
-  background: url('assets/fotos/ipioca-praia-turquesa.jpg') center/cover no-repeat;
+  background: url('assets/fotos/hero-fachada.jpg') center/cover no-repeat;
   isolation: isolate;
   display: flex;
   align-items: center;
@@ -675,11 +675,22 @@ em.poetic-light {
   opacity: 0.3;
 }
 
+.section-showcase {
+  margin: 40px auto 70px;
+  max-width: 1200px;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.section-showcase img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 60px;
+  align-items: stretch;
 }
 .step {
   background: #FFF;
@@ -689,6 +700,47 @@ em.poetic-light {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
+}
+.step-highlight {
+  background: linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 60%);
+  border: 2px solid var(--laranja);
+  box-shadow: 0 20px 60px rgba(234,128,54,0.25);
+  transform: translateY(-14px);
+  padding-top: 48px;
+}
+.step-highlight .step-num { font-size: 72px; }
+.step-badge {
+  position: absolute;
+  top: -14px; left: 32px;
+  background: var(--laranja);
+  color: #FFF;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  box-shadow: 0 6px 16px rgba(234,128,54,0.4);
+}
+.step-highlight-line {
+  margin-top: auto;
+  padding: 14px 18px;
+  background: var(--laranja);
+  color: #FFF;
+  border-radius: 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+.step-highlight-line b { font-weight: 800; }
+@media (max-width: 900px) {
+  .step-highlight { transform: none; }
+  .section-showcase { margin: 30px auto 50px; aspect-ratio: 4/3; }
 }
 .step-num {
   font-family: 'Barlow Condensed', sans-serif;
@@ -1192,11 +1244,10 @@ footer {
     <p class="hero-eyebrow">Praia de Ipioca · Maceió · Alagoas</p>
     <h1 class="hero-title">
       Sua casa de férias<br>
-      <span class="poetic">no</span> Caribe brasileiro,<br>
-      todo ano <span class="poetic">no seu nome.</span>
+      <span class="poetic">no</span> Caribe brasileiro.
     </h1>
     <p class="hero-sub">
-      Apartamento mobiliado no <em class="poetic-light">Ipioca Beach Residence</em>, à beira-mar em Alagoas, com estrutura de resort completa. Registrado em cartório no seu nome. Se preferir outro destino, troca pela rede <em class="poetic-light">RCI</em> em 100 países.
+      Apartamento mobiliado à beira-mar em Alagoas. Registrado em cartório no seu nome. Rede <em class="poetic-light">RCI</em> inclusa em 100 países.
     </p>
     <div class="hero-actions">
       <a href="#form" class="btn btn-primary">Quero conhecer as condições</a>
@@ -1274,7 +1325,7 @@ footer {
       ainda tem <span class="poetic">silêncio.</span>
     </h2>
     <p class="chapter-lead">
-      A 30 minutos do aeroporto, Ipioca é o pedaço do litoral norte de Alagoas que <em class="poetic-dark">ainda amanhece devagar</em>. Coqueiral denso, mar em tons de turquesa, piscinas naturais que aparecem na maré baixa. É aqui que a sua casa de férias espera, longe da agitação do centro de Maceió.
+      30 minutos do aeroporto. Coqueiral denso, mar turquesa, piscinas naturais na maré baixa. <em class="poetic-dark">A Maceió que ainda amanhece devagar.</em>
     </p>
   </div>
   <div class="chapter-media">
@@ -1288,7 +1339,11 @@ footer {
   <div class="section-inner">
     <p class="section-eyebrow">O empreendimento</p>
     <h2 class="section-title">Um <span class="poetic">resort</span><br>que também é <span class="poetic">seu.</span></h2>
-    <p class="section-lead">Cinco alas de apartamentos entre coqueirais, piscina que espelha o mar, restaurante e serviço hoteleiro completo. Toda a estrutura de um resort. Com uma diferença que muda tudo: o apartamento é <em class="poetic-light">seu</em>. Registrado em cartório, sem prazo pra acabar.</p>
+    <p class="section-lead">Estrutura completa de resort. Com uma diferença: o apartamento é <em class="poetic-light">seu</em>, registrado em cartório.</p>
+
+    <div class="section-showcase">
+      <img src="assets/fotos/ipioca-aerea-sunset.jpg" alt="Vista aérea do Ipioca Beach Residence ao pôr do sol">
+    </div>
 
     <div class="feature-list">
       <div class="feature">
@@ -1302,9 +1357,9 @@ footer {
             </svg>
           </div>
           <h3 class="feature-title">Piscina que espelha o mar</h3>
-          <p class="feature-txt">Extensa, ao ar livre, com bar molhado e ala infantil. Uma faixa de água que <em class="poetic-light">continua a horizontal</em> da praia, pra quem quer o mar sem sair do resort.</p>
+          <p class="feature-txt">Extensa, ao ar livre, com bar molhado e ala infantil. <em class="poetic-light">O mar sem sair do resort.</em></p>
         </div>
-        <div class="feature-media"><img src="assets/fotos/ipioca-aerea-sunset.jpg" alt="Piscina do resort ao pôr do sol"></div>
+        <div class="feature-media"><img src="assets/fotos/sobre.jpg" alt="Piscina do resort"></div>
       </div>
 
       <div class="feature reverse">
@@ -1318,7 +1373,7 @@ footer {
             </svg>
           </div>
           <h3 class="feature-title">Restaurante Canoas &amp; gastronomia</h3>
-          <p class="feature-txt">Café da manhã, almoço e jantar assinados no restaurante do empreendimento. Você não precisa nem <em class="poetic-light">pensar</em> em cozinhar. A menos que queira, claro, na sua cozinha equipada.</p>
+          <p class="feature-txt">Café da manhã, almoço e jantar assinados. Ou cozinhe você mesmo, na <em class="poetic-light">cozinha equipada do apto.</em></p>
         </div>
         <div class="feature-media carousel" data-carousel>
           <div class="carousel-track">
@@ -1347,7 +1402,7 @@ footer {
             </svg>
           </div>
           <h3 class="feature-title">Apartamento pronto pra usar</h3>
-          <p class="feature-txt">Sala, cozinha, quartos, banheiros. <em class="poetic-light">Tudo entregue mobiliado</em>. Você chega com a mala, arruma o guarda-roupa, senta na varanda com uma água de coco e é como se estivesse ali há anos.</p>
+          <p class="feature-txt">Sala, cozinha, quartos, banheiros. <em class="poetic-light">Tudo mobiliado.</em> Chega com a mala e já é casa.</p>
         </div>
         <div class="feature-media"><img src="assets/fotos/apartamento-quarto.jpg" alt="Quarto do apartamento mobiliado"></div>
       </div>
@@ -1360,25 +1415,26 @@ footer {
   <div class="section-inner">
     <p class="section-eyebrow">Como funciona</p>
     <h2 class="section-title">Uma <span class="poetic">fração de imóvel</span><br>com semanas garantidas<br>todos os anos.</h2>
-    <p class="section-lead">Multipropriedade não é timeshare. Não é aluguel. Não é "clube de férias". <b>É um imóvel real, no seu CPF, registrado em cartório</b>, com direito de uso definido para sempre.</p>
+    <p class="section-lead">Não é timeshare. Não é aluguel. <b>É imóvel de verdade, no seu CPF, registrado em cartório.</b> Para sempre.</p>
 
     <div class="steps">
-      <div class="step">
+      <div class="step step-highlight">
+        <span class="step-badge">Comece por aqui</span>
         <div class="step-num">01</div>
         <h3 class="step-title">Você escolhe sua cota</h3>
-        <p class="step-txt">1, 2 ou 4 semanas por ano no Ipioca Beach Residence. Cada cota é uma <em>fração ideal</em> do apartamento, registrada em cartório em seu nome. Nada de contrato de uso: é escritura.</p>
-        <span class="step-tag">Fração ideal</span>
+        <p class="step-txt"><b>1, 2 ou 4 semanas por ano</b> no Ipioca Beach Residence. Cada cota é uma <em>fração ideal</em> do apartamento, registrada em cartório em seu nome.</p>
+        <p class="step-highlight-line">Nada de contrato de uso. <b>É escritura.</b></p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
         <h3 class="step-title">Suas semanas ficam garantidas</h3>
-        <p class="step-txt">Todo ano, nas datas contratadas, você usa o apartamento. Chega com a mala e pronto. A manutenção, a limpeza e o serviço ficam por conta do <em>resort</em>.</p>
+        <p class="step-txt">Todo ano, nas suas datas. Chega e usa. Manutenção e limpeza por conta do <em>resort</em>.</p>
         <span class="step-tag">Sem dor de cabeça</span>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <h3 class="step-title">Se quiser variar, troca pela RCI</h3>
-        <p class="step-txt">Prefere Grécia esse ano? Cancún? Portugal? Deposita a sua semana na <em>rede RCI</em> e troca por mais de 4.000 resorts em 100 países.</p>
+        <p class="step-txt">Grécia? Cancún? Portugal? Deposita a semana na <em>rede RCI</em> e troca por 4.000+ resorts em 100 países.</p>
         <span class="step-tag">Rede internacional</span>
       </div>
     </div>
@@ -1394,7 +1450,7 @@ footer {
   <div class="section-inner">
     <p class="section-eyebrow">Faz as contas</p>
     <h2 class="section-title">Quanto você já gasta<br>em férias <span class="poetic">sem ficar</span><br>com nada?</h2>
-    <p class="section-lead" style="color: rgba(255,255,255,0.75);">Uma família brasileira gasta entre <b style="color:#FFF;">R$ 8 mil e R$ 14 mil por ano</b> com hospedagem em férias. E esse número sobe todo ano com a inflação do turismo. Compare o dinheiro que vai pra o hotel com o que vira patrimônio no seu nome.</p>
+    <p class="section-lead" style="color: rgba(255,255,255,0.75);">Uma família brasileira gasta entre <b style="color:#FFF;">R$ 8 mil e R$ 14 mil por ano</b> em hospedagem. E sobe todo ano com a inflação do turismo.</p>
 
     <div class="compare">
       <div class="compare-col negative">
@@ -1432,7 +1488,7 @@ footer {
   <div class="chapter-narrow">
     <p class="chapter-coords"><span>Rede RCI</span><span>Inclusa</span></p>
     <h2 class="chapter-title">Se um ano você não vier,<br>o mundo vem <span class="poetic">até você.</span></h2>
-    <p class="chapter-lead">A cota no Ipioca Beach Residence te conecta à <em class="poetic-dark">RCI</em>, a maior rede de intercâmbio de propriedades de férias do planeta. Deposita a sua semana, escolhe outro destino: <b>mais de 4.000 resorts em 100 países</b>.</p>
+    <p class="chapter-lead">A rede <em class="poetic-dark">RCI</em> vem inclusa. Deposita sua semana e escolhe outro destino. <b>4.000+ resorts em 100 países.</b></p>
   </div>
   <div class="section-inner" style="max-width: 1080px; margin: 0 auto;">
     <div class="rci-grid">
@@ -1451,9 +1507,9 @@ footer {
   <div class="owners-inner">
     <p class="owners-eyebrow">Quem já é dono</p>
     <h2>Chegam, olham o mar<br>e viram <span class="poetic">donos.</span></h2>
-    <p>Famílias inteiras, casais e aposentados que chegam <em>de todo canto do Brasil</em>. Cansaram de recomeçar do zero todo verão, de pagar hotel caro e voltar pra casa sem nada que fique.</p>
-    <p>Alguns já conheciam Maceió há vinte anos. Outros nunca tinham posto o pé em Alagoas. Todos, no primeiro café da manhã na varanda, sentiram a mesma coisa: <em>é isso.</em> E ficaram.</p>
-    <p>Hoje trazem os netos. Não esperam as férias chegarem: pegam um feriado prolongado, botam a mala no carro e vão. Porque é <em>casa deles.</em></p>
+    <p>Famílias, casais e aposentados <em>de todo canto do Brasil.</em> Cansaram de pagar hotel caro e voltar pra casa sem nada que fique.</p>
+    <p>No primeiro café na varanda, todos sentem a mesma coisa: <em>é isso.</em> E ficaram.</p>
+    <p>Hoje trazem os netos. Vão num feriado prolongado, sem esperar as férias. <em>Porque é casa deles.</em></p>
     <div class="owners-stats">
       <div class="owners-stat"><strong>4.000+</strong><span>Resorts na rede RCI</span></div>
       <div class="owners-stat"><strong>100</strong><span>Países pra trocar</span></div>
@@ -1567,7 +1623,7 @@ footer {
 <!-- ============ CTA FINAL ============ -->
 <section class="cta-final">
   <h2>Sua próxima<br><span class="poetic">temporada</span><br>já começou.</h2>
-  <p>Uma conversa de 40 minutos por vídeo. Sem pressão, sem letra miúda. Se fizer sentido, você segue. Se não, ganhou um raio-x completo de como funciona multipropriedade.</p>
+  <p>40 minutos por vídeo. Sem pressão, sem letra miúda. Se fizer sentido, você segue.</p>
   <a href="#form" class="btn btn-white-outline">Quero conhecer as condições</a>
 </section>
 
