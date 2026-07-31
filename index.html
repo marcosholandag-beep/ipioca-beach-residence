@@ -529,6 +529,66 @@ em.poetic-light {
 .section-bege .chapter-title { color: var(--preto); }
 .section-bege .chapter-lead { color: var(--cinza-texto); }
 
+/* Carrossel de shorts (prova social) */
+.shorts {
+  position: relative;
+  margin-top: 60px;
+}
+.shorts-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 8px 4px 24px;
+  margin: -8px -4px -24px;
+}
+.shorts-track::-webkit-scrollbar { display: none; }
+.short {
+  flex: 0 0 calc((100% - 40px) / 3);
+  scroll-snap-align: start;
+  aspect-ratio: 9/16;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  position: relative;
+}
+.short iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.shorts-nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 32px;
+}
+.shorts-btn {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--laranja);
+  color: #FFF;
+  font-size: 24px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+  box-shadow: 0 8px 22px rgba(234,128,54,0.35);
+}
+.shorts-btn:hover { background: var(--laranja-hover); transform: translateY(-2px); }
+@media (max-width: 900px) {
+  .short { flex: 0 0 80%; }
+}
+@media (max-width: 600px) {
+  .short { flex: 0 0 88%; }
+}
+
 /* CTA flutuante */
 .float-cta {
   position: fixed;
@@ -1445,6 +1505,30 @@ footer {
   </div>
 </section>
 
+<!-- ============ PROVA REAL (SHORTS) ============ -->
+<section class="section-light" id="depoimentos">
+  <div class="section-inner">
+    <p class="section-eyebrow">Prova real</p>
+    <h2 class="section-title">Ouça de quem <span class="poetic">já é dono.</span></h2>
+    <p class="section-lead">Compradores contando por que decidiram — e como é ter uma casa no Ipioca.</p>
+
+    <div class="shorts">
+      <div class="shorts-track" data-shorts>
+        <div class="short"><iframe src="https://www.youtube.com/embed/shILsqj_uAQ" title="Depoimento 1" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+        <div class="short"><iframe src="https://www.youtube.com/embed/GoHdDZjrFuE" title="Depoimento 2" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+        <div class="short"><iframe src="https://www.youtube.com/embed/2HBIQiKgs2M" title="Depoimento 3" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+        <div class="short"><iframe src="https://www.youtube.com/embed/LiuM3MIMGQU" title="Depoimento 4" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+        <div class="short"><iframe src="https://www.youtube.com/embed/1IztSgtPEic" title="Depoimento 5" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+        <div class="short"><iframe src="https://www.youtube.com/embed/pIpd0D-5U9k" title="Depoimento 6" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="shorts-nav">
+        <button class="shorts-btn prev" aria-label="Depoimento anterior">‹</button>
+        <button class="shorts-btn next" aria-label="Próximo depoimento">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ VALE A PENA (COMPARATIVO) ============ -->
 <section class="section-dark">
   <div class="section-inner">
@@ -1699,6 +1783,19 @@ form.addEventListener('submit', async (e) => {
   form.style.display = 'none';
   success.classList.add('show');
   setTimeout(() => { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 100);
+});
+
+// Carrossel de shorts (prova social)
+document.querySelectorAll('[data-shorts]').forEach(track => {
+  const container = track.closest('.shorts');
+  const scroll = (dir) => {
+    const item = track.querySelector('.short');
+    if (!item) return;
+    const gap = parseInt(getComputedStyle(track).gap) || 20;
+    track.scrollBy({ left: dir * (item.offsetWidth + gap), behavior: 'smooth' });
+  };
+  container.querySelector('.shorts-btn.prev').addEventListener('click', () => scroll(-1));
+  container.querySelector('.shorts-btn.next').addEventListener('click', () => scroll(1));
 });
 
 // Carrossel do restaurante
