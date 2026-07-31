@@ -1262,6 +1262,39 @@ footer {
   gap: 20px;
   font-size: 12px;
 }
+.trilha-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.55);
+  transition: color .2s;
+}
+.trilha-credit:hover { color: #FFF; }
+.trilha-credit-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.trilha-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.trilha-mark svg {
+  stroke: #EA8036;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  fill: none;
+}
+.trilha-word {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #FFF;
+  letter-spacing: -0.01em;
+}
 
 /* ============ RESPONSIVO ============ */
 @media (max-width: 900px) {
@@ -1773,7 +1806,17 @@ footer {
   </div>
   <div class="footer-bottom">
     <p>© 2026 Ipioca Beach Residence · Todos os direitos reservados</p>
-    <p>Feito com carinho no litoral norte de Alagoas</p>
+    <a class="trilha-credit" href="https://somostrilha.com.br" target="_blank" rel="noopener" aria-label="Desenvolvido pela Trilha Performance Digital">
+      <span class="trilha-credit-label">Desenvolvido pela</span>
+      <span class="trilha-mark">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <g fill="#EA8036">
+            <path d="M12 2v20M2 12h20M4.6 4.6l14.8 14.8M19.4 4.6L4.6 19.4"/>
+          </g>
+        </svg>
+        <span class="trilha-word">trilha</span>
+      </span>
+    </a>
   </div>
 </footer>
 
