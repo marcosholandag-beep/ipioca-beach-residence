@@ -1277,19 +1277,15 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.16em;
 }
-.trilha-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.trilha-logo {
+  height: 40px;
+  width: auto;
+  background: #FFF;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: transform .2s;
 }
-.trilha-word {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: #FFF;
-  letter-spacing: -0.005em;
-  text-transform: lowercase;
-}
+.trilha-credit:hover .trilha-logo { transform: translateY(-2px); }
 
 /* ============ RESPONSIVO ============ */
 @media (max-width: 900px) {
@@ -1803,16 +1799,7 @@ footer {
     <p>© 2026 Ipioca Beach Residence · Todos os direitos reservados</p>
     <a class="trilha-credit" href="https://somostrilha.com.br" target="_blank" rel="noopener" aria-label="Desenvolvido pela Trilha Performance Digital">
       <span class="trilha-credit-label">Desenvolvido pela</span>
-      <span class="trilha-mark">
-        <svg viewBox="-12 -12 24 24" width="20" height="20" aria-hidden="true">
-          <g fill="#EA8036">
-            <ellipse cx="0" cy="0" rx="2.4" ry="10"/>
-            <ellipse cx="0" cy="0" rx="2.4" ry="10" transform="rotate(60)"/>
-            <ellipse cx="0" cy="0" rx="2.4" ry="10" transform="rotate(120)"/>
-          </g>
-        </svg>
-        <span class="trilha-word">trilha</span>
-      </span>
+      <img src="assets/logos/trilha-logo.png" alt="Trilha Performance Digital" class="trilha-logo">
     </a>
   </div>
 </footer>
