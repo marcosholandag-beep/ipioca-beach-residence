@@ -1282,18 +1282,13 @@ footer {
   align-items: center;
   gap: 6px;
 }
-.trilha-mark svg {
-  stroke: #EA8036;
-  stroke-width: 2.4;
-  stroke-linecap: round;
-  fill: none;
-}
 .trilha-word {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 18px;
   color: #FFF;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
+  text-transform: lowercase;
 }
 
 /* ============ RESPONSIVO ============ */
@@ -1809,9 +1804,11 @@ footer {
     <a class="trilha-credit" href="https://somostrilha.com.br" target="_blank" rel="noopener" aria-label="Desenvolvido pela Trilha Performance Digital">
       <span class="trilha-credit-label">Desenvolvido pela</span>
       <span class="trilha-mark">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <svg viewBox="-12 -12 24 24" width="20" height="20" aria-hidden="true">
           <g fill="#EA8036">
-            <path d="M12 2v20M2 12h20M4.6 4.6l14.8 14.8M19.4 4.6L4.6 19.4"/>
+            <ellipse cx="0" cy="0" rx="2.4" ry="10"/>
+            <ellipse cx="0" cy="0" rx="2.4" ry="10" transform="rotate(60)"/>
+            <ellipse cx="0" cy="0" rx="2.4" ry="10" transform="rotate(120)"/>
           </g>
         </svg>
         <span class="trilha-word">trilha</span>
